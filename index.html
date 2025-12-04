@@ -497,6 +497,62 @@
             width: 100%;
         }
         
+        .faq-section {
+            padding: 120px 20px;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-card {
+            background: rgba(26, 26, 26, 0.7);
+            border-radius: var(--radius);
+            padding: 40px 35px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(224, 17, 17, 0.3);
+            box-shadow: 0 15px 40px rgba(224, 17, 17, 0.15);
+        }
+        
+        .faq-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .faq-icon i {
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .faq-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .faq-card p {
+            color: var(--light);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
         .testimonials-section {
             padding: 120px 20px;
             position: relative;
@@ -735,6 +791,11 @@
                 grid-template-columns: 1fr;
                 max-width: 400px;
             }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
         }
         
         @media (max-width: 768px) {
@@ -759,6 +820,10 @@
             .testimonial-content p {
                 font-size: 1.3rem;
             }
+            
+            .faq-card {
+                padding: 35px 25px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -779,6 +844,10 @@
             .pricing-card {
                 padding: 40px 25px;
             }
+            
+            .faq-card {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
@@ -797,6 +866,7 @@
         <nav class="nav-links">
             <a href="/dashboard/dashboard.html" class="nav-link">Dashboard</a>
             <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#faq" class="nav-link">FAQ</a>
             <a href="https://discord.gg/JpRJfZmRRK" class="nav-link">Discord</a>
         </nav>
         
@@ -906,6 +976,38 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section faq-section">
+            <div class="section-header">
+                <h2 class="section-title">Frequently As<span class="primary">ked Questions</span></h2>
+                <p class="section-subtitle">Get answers to common questions about ASync</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-card">
+                    <h3>Is ASync Legit?</h3>
+                    <p>Yes, ASync is a legitimate service with hundreds of satisfied users. We provide a reliable and secure serverside experience with ongoing updates.</p>
+                </div>
+                
+                <div class="faq-card">
+
+                    <h3>Is ASync Illegal?</h3>
+                    <p>ASync operates within Roblox's Terms of Service. We do not condone or support any malicious activities.</p>
+                </div>
+                
+                <div class="faq-card">
+                    <h3>Is ASync Safe?</h3>
+                    <p>ASync is completely safe to use. ROBLOX Can't ban you for using our service.</p>
+                </div>
+                
+                
+                <div class="faq-card">
+                    <h3>Does ASync Get Updates?</h3>
+                    <p>Yes, ASync receives regular updates with new features, new scripts, and performance improvements.</p>
+                </div>
+
             </div>
         </section>
         
@@ -1081,6 +1183,7 @@
                     <h4>Product</h4>
                     <ul>
                         <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#testimonials">Reviews</a></li>
                         <li><a href="#video">Showcase</a></li>
                     </ul>
