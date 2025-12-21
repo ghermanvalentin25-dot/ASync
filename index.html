@@ -10,6 +10,93 @@
 <meta property="og:description" content="Making Roblox Better With 🍀. An ROBLOX ServerSide with best games.">
 <link rel="icon" href="https://jikz8aomz9lk2bhz8aoka8xzkbxu.neocities.org/test/logo.png" type="image/x-icon">
 <style>
+    <style>
+/* Adjust testimonials container for continuous scroll */
+.testimonials-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 320px;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 40px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    animation: scrollTestimonials 40s linear infinite;
+}
+
+.testimonial-slide {
+    width: 500px;
+    height: 280px;
+    flex-shrink: 0;
+    background: rgba(26,26,26,0.7);
+    border-radius: 16px;
+    padding: 40px;
+    border: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    transition: all 0.3s;
+}
+
+.testimonial-slide:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0,179,60,0.3);
+    box-shadow: 0 20px 50px rgba(0,179,60,0.2);
+}
+
+.testimonial-badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(0,179,60,0.1);
+    border: 1px solid rgba(0,179,60,0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.testimonial-content {
+    flex: 1;
+}
+
+.testimonial-content p {
+    color: var(--light);
+    font-size: 1.4rem;
+    line-height: 1.8;
+    font-style: italic;
+}
+
+.testimonial-rating {
+    display: flex;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.testimonial-rating i {
+    color: #ffd700;
+    font-size: 1.8rem;
+}
+
+@keyframes scrollTestimonials {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.testimonials-container:hover .testimonials-track {
+    animation-play-state: paused;
+}
+</style>
 :root {
     --primary: #00b33c;
     --primary-dark: #008f2a;
