@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saint Admin - Ultimate Web-based Execution</title>
+    <meta name="description" content="Powerup your gameplay with Saint Admin - the ultimate web-based execution tool with advanced security, lightning-fast performance, and zero downloads required.">
+    <link rel="icon" href="/03b3cf7a14673a4735184b5cfc73428e.png">
+    <meta name="keywords" content="saint admin, saint serverside, saint admin serverside, roblox serverside, roblox cheat, roblox hack, dll injector, roblox exploiting, roblox fe bypass, cheap roblox serverside">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@300;400;500&amp;display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #ef4444;
+            --primary-dark: #dc2626;
+            --primary-light: #f87171;
+            --secondary: #3b82f6;
+            --accent: #f97316;
+            --dark-bg: #0a0a0a;
+            --darker-bg: #050505;
+            --card-bg: rgba(15, 15, 15, 0.7);
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --text-tertiary: #9ca3af;
+            --border-color: rgba(239, 68, 68, 0.2);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --gradient-red: linear-gradient(135deg, #ef4444, #dc2626, #b91c1c);
+            --gradient-orange: linear-gradient(135deg, #f97316, #ea580c);
+            --gradient-blue: linear-gradient(135deg, #3b82f6, #2563eb);
+            --gradient-primary: linear-gradient(135deg, #ef4444, #f97316);
+            --gradient-green: linear-gradient(135deg, #10b981, #059669);
+            --gradient-purple: linear-gradient(135deg, #8b5cf6, #7c3aed);
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+            position: relative;
+        }
+        
+        /* ASCII Art Background */
+        .ascii-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            opacity: 0.05;
+            pointer-events: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            line-height: 1.2;
+            white-space: pre;
+            color: var(--primary-light);
+            overflow: hidden;
+        }
+        
+        .ascii-bg-content {
+            animation: scroll-up 60s linear infinite;
+        }
+        
+        @keyframes scroll-up {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+        
+        /* Gradient Overlay */
+        .gradient-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(249, 115, 22, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        /* Animated Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.5rem 2rem;
+            backdrop-filter: blur(10px);
+            background-color: rgba(10, 10, 10, 0.8);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 1rem;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--text-primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-light);
+        }
+        
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 12rem 2rem 6rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, #ffffff, var(--primary-light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--border-light);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Features Section */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(239, 68, 68, 0.15);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            background: rgba(239, 68, 68, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .feature-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .pricing-card.popular {
+            border-color: var(--primary);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2);
+        }
+        
+        .pricing-card.popular::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 0 16px 0 16px;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+        
+        .pricing-tier {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .pricing-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 1.5rem 0;
+            color: var(--text-primary);
+        }
+        
+        .pricing-period {
+            font-size: 1rem;
+            color: var(--text-tertiary);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .pricing-features li {
+            padding: 0.75rem 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .pricing-features li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Showcases Section */
+        .showcases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .showcase-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .showcase-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(239, 68, 68, 0.15);
+        }
+        
+        .showcase-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(249, 115, 22, 0.2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+        
+        .showcase-content {
+            padding: 2rem;
+        }
+        
+        .showcase-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .showcase-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .showcase-stats {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-tertiary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-light);
+            padding-top: 1rem;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, rgba(15, 15, 15, 0.9), rgba(10, 10, 10, 0.9));
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 4rem;
+            text-align: center;
+            margin: 4rem auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(239, 68, 68, 0.05) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .cta-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .cta-desc {
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            border-top: 1px solid var(--border-light);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .footer-tagline {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 300px;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+        
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.popular {
+                transform: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links, .nav-actions {
+                display: none;
+            }
+            
+            .nav-links.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--darker-bg);
+                padding: 2rem;
+                border-top: 1px solid var(--border-light);
+                border-bottom: 1px solid var(--border-light);
+                gap: 1.5rem;
+            }
+            
+            .nav-actions.mobile-open {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: calc(100% + 200px);
+                left: 0;
+                width: 100%;
+                padding: 0 2rem 2rem;
+                background-color: var(--darker-bg);
+            }
+            
+            .hero {
+                padding: 10rem 1.5rem 4rem;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .stats {
+                gap: 2rem;
+            }
+            
+            .section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cta {
+                padding: 3rem 1.5rem;
+                border-radius: 15px;
+            }
+            
+            .pricing-grid,
+            .showcases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .stat-value {
+                font-size: 2rem;
+            }
+            
+            .pricing-price {
+                font-size: 2.8rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.8s ease forwards;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--darker-bg);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 5px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+    </style>
+</head>
+<body style="opacity: 1; transition: opacity 0.5s ease-in;">
+    <div class="ascii-bg">
+        <div class="ascii-bg-content">
+        </div>
+    </div>
+    
+    <div class="gradient-overlay"></div>
+    
+    <div class="particles" id="particles-container"><div class="particle" style="left: 78.7552%; animation-delay: 10.053s; animation-duration: 28.9674s; width: 3.09435px; height: 3.09435px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 50.5792%; animation-delay: 16.6581s; animation-duration: 24.4257s; width: 2.8392px; height: 2.8392px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 91.4169%; animation-delay: 7.09263s; animation-duration: 25.4371s; width: 1.83858px; height: 1.83858px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 50.5453%; animation-delay: 3.62938s; animation-duration: 19.8191s; width: 1.223px; height: 1.223px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 52.3329%; animation-delay: 12.903s; animation-duration: 24.2223s; width: 1.22787px; height: 1.22787px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 87.7272%; animation-delay: 10.8654s; animation-duration: 16.6163s; width: 2.24545px; height: 2.24545px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 18.1864%; animation-delay: 13.2668s; animation-duration: 18.3235s; width: 1.87985px; height: 1.87985px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 99.8895%; animation-delay: 11.066s; animation-duration: 15.916s; width: 2.99467px; height: 2.99467px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 16.3563%; animation-delay: 12.2113s; animation-duration: 16.6477s; width: 2.56015px; height: 2.56015px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 79.6741%; animation-delay: 1.03178s; animation-duration: 20.7053s; width: 3.57676px; height: 3.57676px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 39.3268%; animation-delay: 4.81008s; animation-duration: 28.8902s; width: 1.59655px; height: 1.59655px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 24.0001%; animation-delay: 6.136s; animation-duration: 17.9653s; width: 2.45436px; height: 2.45436px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 96.1828%; animation-delay: 18.8008s; animation-duration: 15.2313s; width: 3.63361px; height: 3.63361px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 38.2146%; animation-delay: 10.5178s; animation-duration: 21.3813s; width: 1.43298px; height: 1.43298px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 30.4953%; animation-delay: 17.2221s; animation-duration: 18.452s; width: 2.58786px; height: 2.58786px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 79.8237%; animation-delay: 16.8427s; animation-duration: 29.8999s; width: 2.76965px; height: 2.76965px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 62.3574%; animation-delay: 0.886443s; animation-duration: 18.8433s; width: 2.30674px; height: 2.30674px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 26.8396%; animation-delay: 18.648s; animation-duration: 24.0727s; width: 2.23678px; height: 2.23678px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 80.116%; animation-delay: 3.18579s; animation-duration: 24.7349s; width: 1.65306px; height: 1.65306px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 26.6509%; animation-delay: 8.93526s; animation-duration: 24.7471s; width: 3.42095px; height: 3.42095px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 53.0368%; animation-delay: 19.0673s; animation-duration: 20.3235s; width: 2.32256px; height: 2.32256px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 62.7624%; animation-delay: 14.1668s; animation-duration: 21.2522s; width: 1.86699px; height: 1.86699px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 34.4407%; animation-delay: 9.51375s; animation-duration: 18.1623s; width: 3.78265px; height: 3.78265px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 74.8936%; animation-delay: 14.0012s; animation-duration: 17.1814s; width: 1.1918px; height: 1.1918px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 77.28%; animation-delay: 15.9644s; animation-duration: 25.3592s; width: 1.08217px; height: 1.08217px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 82.5955%; animation-delay: 17.9003s; animation-duration: 17.7532s; width: 1.20089px; height: 1.20089px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 16.8954%; animation-delay: 19.2133s; animation-duration: 22.1977s; width: 3.92201px; height: 3.92201px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 17.8338%; animation-delay: 2.56359s; animation-duration: 17.255s; width: 1.31607px; height: 1.31607px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 16.6142%; animation-delay: 4.04205s; animation-duration: 21.2511s; width: 2.83055px; height: 2.83055px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 35.0139%; animation-delay: 19.5068s; animation-duration: 17.5877s; width: 2.55872px; height: 2.55872px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 41.2245%; animation-delay: 0.838245s; animation-duration: 20.7547s; width: 2.38691px; height: 2.38691px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 4.3408%; animation-delay: 8.15525s; animation-duration: 25.2149s; width: 2.68394px; height: 2.68394px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 66.8481%; animation-delay: 0.491269s; animation-duration: 18.1588s; width: 2.16199px; height: 2.16199px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 34.9799%; animation-delay: 3.19329s; animation-duration: 29.8272s; width: 1.54749px; height: 1.54749px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 50.4475%; animation-delay: 9.10626s; animation-duration: 18.8436s; width: 2.41904px; height: 2.41904px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 26.1859%; animation-delay: 0.516999s; animation-duration: 23.9546s; width: 2.37217px; height: 2.37217px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 32.0971%; animation-delay: 13.6604s; animation-duration: 24.2553s; width: 3.01044px; height: 3.01044px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 68.9124%; animation-delay: 8.86437s; animation-duration: 19.5226s; width: 3.88591px; height: 3.88591px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 21.9074%; animation-delay: 7.44569s; animation-duration: 29.9082s; width: 1.51871px; height: 1.51871px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 58.7003%; animation-delay: 1.7826s; animation-duration: 15.0067s; width: 3.67157px; height: 3.67157px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 14.3071%; animation-delay: 5.26757s; animation-duration: 29.1685s; width: 1.02997px; height: 1.02997px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 59.8901%; animation-delay: 3.13327s; animation-duration: 28.7242s; width: 1.65985px; height: 1.65985px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 8.00234%; animation-delay: 5.70494s; animation-duration: 28.5838s; width: 2.26822px; height: 2.26822px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 69.1991%; animation-delay: 7.64588s; animation-duration: 17.1913s; width: 1.27324px; height: 1.27324px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 66.0428%; animation-delay: 6.92994s; animation-duration: 25.6091s; width: 2.85176px; height: 2.85176px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 65.8716%; animation-delay: 2.78749s; animation-duration: 26.2555s; width: 2.93405px; height: 2.93405px; background-color: rgb(249, 115, 22);"></div><div class="particle" style="left: 42.1296%; animation-delay: 12.4757s; animation-duration: 24.7978s; width: 1.00845px; height: 1.00845px; background-color: rgb(139, 92, 246);"></div><div class="particle" style="left: 10.8411%; animation-delay: 12.1564s; animation-duration: 23.864s; width: 2.26413px; height: 2.26413px; background-color: rgb(239, 68, 68);"></div><div class="particle" style="left: 98.5306%; animation-delay: 8.57277s; animation-duration: 25.436s; width: 1.39196px; height: 1.39196px; background-color: rgb(59, 130, 246);"></div><div class="particle" style="left: 91.762%; animation-delay: 2.69675s; animation-duration: 22.87s; width: 1.05574px; height: 1.05574px; background-color: rgb(249, 115, 22);"></div></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">S</div>
+                Saint Admin
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobile-menu-toggle">☰</button>
+            
+            <nav class="nav-links" id="nav-links">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#features-section" class="nav-link">Features</a>
+                <a href="#pricing-section" class="nav-link">Pricing</a>
+                <a href="#showcases-section" class="nav-link">Showcases</a>
+                <a href="https://discord.gg/CEKQDKBN9R" class="nav-link">Join Discord</a>
+            </nav>
+            
+            <div class="nav-actions" id="nav-actions">
+                <a href="/sign-in" class="btn btn-secondary">Sign In</a>
+                <a href="/register" class="btn btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <h1 class="hero-title slide-up" style="animation-play-state: running;">
+            Powerup your gameplay with<br>
+            <span>Saint Admin</span>
+        </h1>
+        
+        <p class="hero-subtitle slide-up" style="animation-play-state: running;">
+            Unleash the power of seamless server-side execution with unmatched performance, 
+            advanced security, and zero downloads required. Experience the most reliable and 
+            feature-rich gaming administration tool with lifetime access and premium support.
+        </p>
+        
+        <div class="hero-actions slide-up" style="animation-play-state: running;">
+            <a href="#pricing-section" class="btn btn-primary">View Pricing</a>
+            <a href="https://discord.gg/CEKQDKBN9R" class="btn btn-secondary">Join Community</a>
+        </div>
+        
+        <div class="stats slide-up" style="animation-play-state: running;">
+            <div class="stat-item">
+                <div class="stat-value">150+</div>
+                <div class="stat-label">Supported Games</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">High Quality</div>
+                <div class="stat-label">Games</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Support</div>
+            </div>
+        <div class="stat-item">
+                <div class="stat-value">500+</div>
+                <div class="stat-label">Customers</div>
+            </div></div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="section" id="features-section">
+        <h2 class="section-title slide-up" style="animation-play-state: running;">Powerful Features</h2>
+        <p class="section-subtitle slide-up" style="animation-play-state: running;">
+            Everything you need to dominate your gaming experience
+        </p>
+        
+        <div class="features-grid">
+            <div class="feature-card slide-up" style="animation-play-state: running;">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Lightning Fast Execution Speed</h3>
+                <p class="feature-desc">
+                    Optimized an enhanced execution performance with zero-lag execution intended for smooth serversiding.
+                </p>
+            </div>
+            
+            <div class="feature-card slide-up" style="animation-play-state: running; transform: translateY(0px);">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Good Games</h3>
+                <p class="feature-desc">
+                    Our services provide huge games for a cheap price with undetected methods!
+                </p>
+            </div>
+            
+            <div class="feature-card slide-up" style="animation-play-state: running;">
+                <div class="feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h3 class="feature-title">Website Based Execution</h3>
+                <p class="feature-desc">
+                    Our service does not require downloads and executes scripts on the server through the website.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section class="section" id="pricing-section">
+        <h2 class="section-title slide-up">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle slide-up">
+            Choose the perfect plan for your gaming needs. All plans include lifetime access.
+        </p>
+        
+        <div class="pricing-grid">
+            <div class="pricing-card slide-up">
+                <h3 class="pricing-tier">Basic</h3>
+                <div class="pricing-price">300 Robux</div>
+                <div class="pricing-period">One-time payment</div>
+                
+                <ul class="pricing-features">
+                    <li>More strict terms of service</li>
+                    <li>Fast execution speed</li>
+                    <li>Access to all supported games</li>
+                </ul>
+                
+                <a href="https://www.roblox.com/game-pass/1606468319/Saint-Basic" class="btn btn-outline">Get Started</a>
+            </div>
+            
+            <div class="pricing-card slide-up popular">
+                <h3 class="pricing-tier">Exclusive</h3>
+                <div class="pricing-price">500 Robux</div>
+                <div class="pricing-period">One-time payment</div>
+                
+                <ul class="pricing-features">
+                    <li>Less strict terms of service</li>
+                    <li>Fast execution speed</li>
+                    <li>Access to all supported games</li>
+                </ul>
+                
+                <a href="https://www.roblox.com/game-pass/1606204325/Saint-Exclusive" class="btn btn-primary">Get Started</a>
+            </div>
+            
+        </div>
+    </section>
+<p class="section-subtitle slide-up">
+            After purchasing, create a ticket in our discord server providing your roblox username where you've purchased the gamepass. After that, support team will assist you.
+        </p>
+    
+    <!-- Showcases Section -->
+    <section class="section" id="showcases-section">
+        <h2 class="section-title slide-up">User Showcases</h2>
+        <p class="section-subtitle slide-up">
+            See how our users are dominating their favorite games with Saint Admin
+        </p>
+        
+        <div class="showcases-grid">
+            <div class="showcase-card slide-up">
+                <img class="showcase-image" src="https://i.ytimg.com/vi/gUPKH5gAqn0/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&amp;rs=AOn4CLDOLbtG8sK2wHPETm4WetNckAv4Mg">
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Saint admin serverside showcase | bypass byfron 2025</h3>
+                    <p class="showcase-desc">
+                        By @NORMAL CAT
+                    </p>
+                    <div class="showcase-stats">
+<a href="https://www.youtube.com/watch?v=gUPKH5gAqn0" class="btn btn-primary">‎View on Youtube‎</a>
+                    </div>
+                </div>
+            </div>
+            
+
+            
+            <div class="showcase-card slide-up">
+                <img class="showcase-image" src="https://images-ext-1.discordapp.net/external/OinXVuzNCX8iys7zWHzyfeP4n1cDiosxBwlDiEEteTA/https/i.ytimg.com/vi/lrOgIqF0yDU/maxresdefault.jpg?format=webp&amp;width=500&amp;height=225">
+                <div class="showcase-content">
+                    <h3 class="showcase-title">Saint Admin Serverside - infected 5k Player Game?!?!?</h3>
+                    <p class="showcase-desc">
+                        By @17.Issarathep Lhaojedsada
+                    </p>
+                    <div class="showcase-stats">
+<a href="https://www.youtube.com/watch?v=lrOgIqF0yDU" class="btn btn-primary">View on Youtube‎</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section">
+        <div class="cta slide-up">
+            <h2 class="cta-title">Ready to Transform Your Gaming?</h2>
+            <p class="cta-desc">
+                Join thousands of satisfied users who have already upgraded their gaming experience with Saint Admin. 
+                Get started today and unleash the full potential of your gameplay.
+            </p>
+            <div class="hero-actions">
+                <a href="/register" class="btn btn-primary pulse">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer information -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">Saint Admin</div>
+                <p class="footer-tagline">
+                    The best roblox serverside providing lightning fast execution speed, good games and website based execution. Absolutely no downloads required!
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Product</h3>
+                <a href="#features-section" class="footer-link">Features</a>
+                <a href="#pricing-section" class="footer-link">Pricing</a>
+                <a href="#showcases-section" class="footer-link">Showcases</a>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Company</h3>
+                <a href="https://www.youtube.com/@SaintUtilities" class="footer-link">YouTube</a>
+                <a href="https://discord.gg/CEKQDKBN9R" class="footer-link">Discord</a>
+            </div>
+            
+            <div class="footer-links">
+                <h3 class="footer-heading">Legal</h3>
+                <a href="/legal/terms" class="footer-link">Terms of Service</a>
+                <a href="/legal/privacy-policy" class="footer-link">Privacy Policy</a>
+                <a href="/legal/refund-policy" class="footer-link">Refund Policy</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>© 2024 Saint Admin. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // set random position
+                const left = Math.random() * 100;
+                const delay = Math.random() * 20;
+                const duration = 15 + Math.random() * 15;
+                
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                // Random size and color
+                const size = 1 + Math.random() * 3;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                const colors = ['#ef4444', '#f97316', '#3b82f6', '#8b5cf6'];
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('nav-links');
+            const navActions = document.getElementById('nav-actions');
+            
+            navLinks.classList.toggle('mobile-open');
+            navActions.classList.toggle('mobile-open');
+            
+            this.textContent = navLinks.classList.contains('mobile-open') ? '✕' : '☰';
+        });
+        
+        document.addEventListener('click', function(event) {
+            const navLinks = document.getElementById('nav-links');
+            const navActions = document.getElementById('nav-actions');
+            const toggleBtn = document.getElementById('mobile-menu-toggle');
+            
+            if (!navLinks.contains(event.target) && !toggleBtn.contains(event.target)) {
+                navLinks.classList.remove('mobile-open');
+                navActions.classList.remove('mobile-open');
+                toggleBtn.textContent = '☰';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Close mobile menu if open
+                    const navLinks = document.getElementById('nav-links');
+                    const navActions = document.getElementById('nav-actions');
+                    const toggleBtn = document.getElementById('mobile-menu-toggle');
+                    
+                    if (navLinks.classList.contains('mobile-open')) {
+                        navLinks.classList.remove('mobile-open');
+                        navActions.classList.remove('mobile-open');
+                        toggleBtn.textContent = '☰';
+                    }
+                    
+                    // Calculate position (accounting for fixed header)
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    // Smooth scroll
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        function handleScrollAnimations() {
+            const elements = document.querySelectorAll('.slide-up');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.animationPlayState = 'running';
+                }
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
+            handleScrollAnimations();
+            
+            window.addEventListener('scroll', handleScrollAnimations);
+         
+            // Add hover effects to cards
+            const cards = document.querySelectorAll('.feature-card, .pricing-card, .showcase-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('popular')) {
+                        this.style.transform = 'translateY(0)';
+                    } else {
+                        this.style.transform = 'scale(1.05)';
+                    }
+                });
+            });
+        });
+    </script>
+
+<script>
+    (function() {
+        window.addEventListener('load', function() {
+            const loadingOverlay = document.createElement('div');
+            loadingOverlay.id = 'saint-admin-loading';
+            loadingOverlay.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 9999;
+                opacity: 1;
+                transition: opacity 0.8s ease-out;
+            `;
+            
+            const logoContainer = document.createElement('div');
+            logoContainer.style.cssText = `
+                position: relative;
+                width: 120px;
+                height: 120px;
+                margin-bottom: 2rem;
+            `;
+            
+            const logoImg = document.createElement('img');
+            logoImg.src = '/03b3cf7a14673a4735184b5cfc73428e.png';
+            logoImg.alt = 'Saint Admin';
+            logoImg.style.cssText = `
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.5));
+                animation: saintPulse 2s infinite ease-in-out;
+            `;
+            
+            const glowRing = document.createElement('div');
+            glowRing.style.cssText = `
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                right: -10px;
+                bottom: -10px;
+                border: 2px solid rgba(239, 68, 68, 0.3);
+                border-radius: 12px;
+                animation: saintRotate 3s linear infinite;
+            `;
+            
+            const loadingText = document.createElement('div');
+            loadingText.textContent = 'Saint Admin';
+            loadingText.style.cssText = `
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #ffffff;
+                margin-bottom: 1rem;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                background: linear-gradient(90deg, #ef4444, #dc2626, #ef4444);
+                background-size: 200% auto;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: saintGradient 2s linear infinite;
+                font-family: 'Inter', sans-serif;
+            `;
+            
+            const loadingDots = document.createElement('div');
+            loadingDots.style.cssText = `
+                display: flex;
+                gap: 8px;
+            `;
+            
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.style.cssText = `
+                    width: 10px;
+                    height: 10px;
+                    background: linear-gradient(135deg, #ef4444, #dc2626);
+                    border-radius: 50%;
+                    opacity: 0.3;
+                    animation: saintBounce 1.4s infinite ease-in-out;
+                    animation-delay: ${i * 0.16}s;
+                `;
+                loadingDots.appendChild(dot);
+            }
+            
+            const progressBar = document.createElement('div');
+            progressBar.style.cssText = `
+                width: 200px;
+                height: 4px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 2px;
+                margin-top: 2rem;
+                overflow: hidden;
+            `;
+            
+            const progressFill = document.createElement('div');
+            progressFill.style.cssText = `
+                width: 0%;
+                height: 100%;
+                background: linear-gradient(90deg, #ef4444, #dc2626);
+                border-radius: 2px;
+                transition: width 0.3s ease;
+            `;
+            
+            progressBar.appendChild(progressFill);
+            
+            logoContainer.appendChild(logoImg);
+            logoContainer.appendChild(glowRing);
+            loadingOverlay.appendChild(logoContainer);
+            loadingOverlay.appendChild(loadingText);
+            loadingOverlay.appendChild(loadingDots);
+            loadingOverlay.appendChild(progressBar);
+            
+            document.body.appendChild(loadingOverlay);
+            
+            const style = document.createElement('style');
+            style.id = 'saint-animations';
+            style.textContent = `
+                @keyframes saintPulse {
+                    0% {
+                        transform: scale(1);
+                        filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.5));
+                    }
+                    50% {
+                        transform: scale(1.05);
+                        filter: drop-shadow(0 0 25px rgba(239, 68, 68, 0.7));
+                    }
+                    100% {
+                        transform: scale(1);
+                        filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.5));
+                    }
+                }
+                
+                @keyframes saintRotate {
+                    0% {
+                        transform: rotate(0deg);
+                        border-color: rgba(239, 68, 68, 0.3);
+                    }
+                    25% {
+                        border-color: rgba(239, 68, 68, 0.6);
+                    }
+                    50% {
+                        transform: rotate(180deg);
+                        border-color: rgba(239, 68, 68, 0.8);
+                    }
+                    75% {
+                        border-color: rgba(239, 68, 68, 0.6);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                        border-color: rgba(239, 68, 68, 0.3);
+                    }
+                }
+                
+                @keyframes saintGradient {
+                    0% {
+                        background-position: 0% 50%;
+                    }
+                    50% {
+                        background-position: 100% 50%;
+                    }
+                    100% {
+                        background-position: 0% 50%;
+                    }
+                }
+                
+                @keyframes saintBounce {
+                    0%, 80%, 100% {
+                        transform: scale(0);
+                        opacity: 0.3;
+                    }
+                    40% {
+                        transform: scale(1);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+            
+            let progress = 0;
+            const progressInterval = setInterval(() => {
+                progress += Math.random() * 20 + 10; 
+                if (progress > 100) progress = 100;
+                
+                progressFill.style.width = `${progress}%`;
+                
+                if (progress >= 100) {
+                    clearInterval(progressInterval);
+                    
+                    setTimeout(() => {
+                        loadingOverlay.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            if (loadingOverlay.parentNode) {
+                                loadingOverlay.parentNode.removeChild(loadingOverlay);
+                            }
+                            if (style.parentNode) {
+                                style.parentNode.removeChild(style);
+                            }
+                            
+                            const mainContent = document.querySelector('main') || document.body;
+                            mainContent.style.opacity = '0';
+                            mainContent.style.transition = 'opacity 0.5s ease-in';
+                            
+                            setTimeout(() => {
+                                mainContent.style.opacity = '1';
+                            }, 50);
+                            
+                        }, 800);
+                        
+                    }, 300);
+                }
+            }, 100);
+        });
+    })();
+</script>
+    
+
+
+</body></html>
