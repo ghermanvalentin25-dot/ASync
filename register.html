@@ -46,7 +46,6 @@
             flex-direction: column;
         }
         
-        /* ASCII Art Background */
         .ascii-bg {
             position: fixed;
             top: 0;
@@ -73,7 +72,6 @@
             100% { transform: translateY(-50%); }
         }
         
-        /* Gradient Overlay */
         .gradient-overlay {
             position: fixed;
             top: 0;
@@ -87,7 +85,6 @@
             pointer-events: none;
         }
         
-        /* Animated Particles */
         .particles {
             position: fixed;
             top: 0;
@@ -124,7 +121,6 @@
             }
         }
         
-        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
@@ -262,7 +258,6 @@
             cursor: pointer;
         }
         
-        /* Register Container */
         .register-container {
             flex: 1;
             display: flex;
@@ -332,7 +327,6 @@
             margin: 0 auto;
         }
         
-        /* Form Styles */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -552,7 +546,6 @@
             text-decoration: underline;
         }
         
-        /* Alert Messages */
         .alert {
             padding: 1rem;
             border-radius: 10px;
@@ -582,7 +575,6 @@
             font-size: 1.2rem;
         }
         
-        /* Footer */
         footer {
             background-color: var(--darker-bg);
             border-top: 1px solid var(--border-light);
@@ -657,7 +649,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Styles */
         @media (max-width: 992px) {
             .register-title {
                 font-size: 2rem;
@@ -737,7 +728,6 @@
             }
         }
         
-        /* Animation Classes */
         .fade-in {
             animation: fadeIn 1s ease forwards;
         }
@@ -762,7 +752,6 @@
             }
         }
         
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -780,7 +769,6 @@
             background: var(--primary-dark);
         }
         
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
@@ -797,7 +785,6 @@
     
     <div class="particles" id="particles-container"></div>
     
-    <!-- Header -->
 <header>
         <div class="nav-container">
             <div class="logo">
@@ -823,7 +810,6 @@
     </header>
 
     
-    <!-- Register Container -->
     <div class="register-container">
         <div class="register-wrapper">
             <div class="register-card slide-up">
@@ -833,7 +819,6 @@
                     <p class="register-subtitle">Create your account to access premium server-side execution tools</p>
                 </div>
                 
-                <!-- Alert Messages -->
                 <div id="errorAlert" class="alert alert-error">
                     <span class="alert-icon">❌</span>
                     <span id="errorMessage">Please fill in all required fields correctly.</span>
@@ -844,7 +829,6 @@
                     <span id="successMessage">Account created successfully! Redirecting...</span>
                 </div>
                 
-                <!-- Register Form -->
                 <form id="registerForm" action="/api/register" method="POST">
                     
                     
@@ -906,7 +890,6 @@
         </div>
     </div>
     
-    <!-- Footer -->
 <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -1168,4 +1151,5 @@
 
 
 </body></html>
+
 
