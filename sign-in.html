@@ -48,7 +48,6 @@
             flex-direction: column;
         }
         
-        /* ASCII Art Background */
         .ascii-bg {
             position: fixed;
             top: 0;
@@ -75,7 +74,6 @@
             100% { transform: translateY(-50%); }
         }
         
-        /* Gradient Overlay */
         .gradient-overlay {
             position: fixed;
             top: 0;
@@ -89,7 +87,6 @@
             pointer-events: none;
         }
         
-        /* Animated Particles */
         .particles {
             position: fixed;
             top: 0;
@@ -126,7 +123,6 @@
             }
         }
         
-        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
@@ -264,7 +260,6 @@
             cursor: pointer;
         }
         
-        /* Login Container */
         .login-container {
             flex: 1;
             display: flex;
@@ -341,7 +336,6 @@
             font-size: 1rem;
         }
         
-        /* Form Styles */
         .form-group {
             margin-bottom: 1.5rem;
         }
@@ -530,7 +524,6 @@
             text-decoration: underline;
         }
         
-        /* Alert Messages */
         .alert {
             padding: 1rem;
             border-radius: 10px;
@@ -560,7 +553,6 @@
             font-size: 1.2rem;
         }
         
-        /* Footer */
         footer {
             background-color: var(--darker-bg);
             border-top: 1px solid var(--border-light);
@@ -642,7 +634,6 @@
             font-size: 0.9rem;
         }
         
-        /* Responsive Styles */
         @media (max-width: 992px) {
             .login-title {
                 font-size: 2rem;
@@ -723,7 +714,6 @@
             }
         }
         
-        /* Animation Classes */
         .fade-in {
             animation: fadeIn 1s ease forwards;
         }
@@ -748,7 +738,6 @@
             }
         }
         
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 10px;
         }
@@ -766,7 +755,6 @@
             background: var(--primary-dark);
         }
         
-        /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
@@ -783,7 +771,6 @@
     
     <div class="particles" id="particles-container"></div>
     
-    <!-- Header -->
 <header>
         <div class="nav-container">
             <div class="logo">
@@ -808,7 +795,6 @@
         </div>
     </header>
     
-    <!-- Login Container -->
     <div class="login-container">
         <div class="login-wrapper">
             <div class="login-card slide-up">
@@ -820,7 +806,6 @@
     <p class="login-subtitle">Sign in to your Saint Admin account</p>
 </div>
                 
-                <!-- Alert Messages -->
                 <div id="errorAlert" class="alert alert-error">
                     <span class="alert-icon">❌</span>
                     <span id="errorMessage">Invalid credentials. Please try again.</span>
@@ -831,7 +816,6 @@
                     <span id="successMessage">Login successful! Redirecting...</span>
                 </div>
                 
-                <!-- Login Form -->
                 <form id="loginForm">
                     <div class="form-group">
                         <label for="username" class="form-label">Email</label>
@@ -886,7 +870,6 @@
         </div>
     </div>
     
-    <!-- Footer -->
 <footer>
         <div class="footer-container">
             <div class="footer-brand">
@@ -954,7 +937,6 @@
             }
         }
         
-        // Mobile menu toggle
         document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
             const navLinks = document.getElementById('nav-links');
             const navActions = document.getElementById('nav-actions');
@@ -977,7 +959,6 @@
             }
         });
         
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -1237,6 +1218,7 @@
     
 </body>
 </html>
+
 
 
 
